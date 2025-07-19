@@ -1,48 +1,22 @@
-import { FirstPersonControls, GizmoHelper, GizmoViewcube, GizmoViewport, MeshReflectorMaterial, OrbitControls, Text } from '@react-three/drei'
+import { OrbitControls, Text } from '@react-three/drei'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useControls } from 'leva'
-import React, { useRef } from 'react'
+import React, { Suspense, useRef } from 'react'
+import Loading from '../../components/ui/Loading'
 
 function AnimateMesh() {
   const meshRef = useRef()
+  const textRef = useRef()
 
-  // const { speed, color } = useControls({
-  //   color: '#ff0000',
-  //   speed : {
-  //     value: 0.005,
-  //     min: 0.0,
-  //     max: 0.03,
-  //     step: 0.001,
-  //   }
-  // })
 
   useFrame(() => {
-    // meshRef.current.rotation.x += 0.005
-    // meshRef.current.rotation.y += 0.005
-    // meshRef.current.rotation.z += 0.001
-    // meshRef.current.rotation.x += speed
-    // meshRef.current.rotation.y += speed
-    // meshRef.current.rotation.z += speed
+    meshRef.current.rotation.y += 0.002
   })
   return (
     <group>
-      <mesh ref={meshRef}>
-        <cylinderGeometry args={[2, 2, 2]} ></cylinderGeometry>
-        {/* <boxGeometry args={[2, 2, 2]} ></boxGeometry> */}
-        <meshStandardMaterial  color="#0077ff"/>
-        {/* <meshBasicMaterial color={0x00bfff} wireframe/> */}
-        
+      <mesh ref={meshRef} >
+        <sphereGeometry args={[2.5, 50, 50, 50]} ></sphereGeometry>
+        <meshBasicMaterial color={0xfa000e} args={[1]} wireframe />
       </mesh>
-        <Text
-        position={[2, 0, 0]} 
-        rotation={[0, Math.PI / 2, 0]} 
-        fontSize={0.5}
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-      >
-        Rahul
-      </Text>
 
     </group>
   )
@@ -51,39 +25,33 @@ function AnimateMesh() {
 const Hero = () => {
 
   return (
-    <div className="grid grid-cols-2 mt-4 w-2xl gap-4 borde border-gray-500 justify-center">
-      <div className='h-full font-medium'>
-        <h1 className='text-3xl'>Shaping
-          {
-            ['Ideas', 'Designs, Concepts'].map(val => (
-              <span>{val}</span>
-            ))
-          }
+    <div className="relative grid grid-cols-2 px-6 py-4  h-screen">
+      <div className="z-10 mt-4 gap-4 justify-center">
+        <div className='h-full  font-medium flex-center'>
+          <div className='uppercase'>
+            <h1 className='text-6xl'>Shaping&nbsp;
+              {
+                ['Ideas', 'Designs, Concepts'].map(val => (
+                  <em>{val}, </em>
+                ))
+              }
 
-        </h1>
-        <h1 className='text-3xl'>into Real Projects</h1>
-        <h1 className='text-3xl'>that deliver results</h1>
+            </h1>
+            <h1 className='text-6xl'>into Real Projects</h1>
+            <h1 className='text-6xl'>that deliver results</h1>
+
+          </div>
+        </div>
       </div>
-      <figure className='border h-82'>
-        {/* <img src='' className='border w-full h-full' /> */}
-        <Canvas>
-          {/* Debugging  */}
-            <GizmoHelper alignment='bottom-left' margin={[60,60]}>
-              <GizmoViewport />
-            </GizmoHelper>
-
-            {/* below for keyboard controls  */}
-            {/* <FirstPersonControls movementSpeed={3} /> */}
-            {/* <gridHelper args={[20, 20, 0xff0000]} />
-            <axesHelper args={[5]} /> */}
-
-            {/* for mouse control  */}
-            <OrbitControls />
-            <AnimateMesh/>
-            <ambientLight intensity={0.2} position={[5,5,3]}/>
-            <spotLight intensity={80} position={[5,5,3]} />
-            {/* <directionalLight intensity={0.5} position={[5,5,3]} /> */}
-        </Canvas>
+      <figure className=' top-0 '>
+        <Suspense fallback={<Loading />}>
+          <Canvas>
+            <AnimateMesh />
+            <OrbitControls></OrbitControls>
+            <ambientLight intensity={0.2} position={[5, 5, 3]} />
+            <directionalLight intensity={0.5} position={[5, 5, 3]} />
+          </Canvas>
+        </Suspense>
       </figure>
     </div>
   )

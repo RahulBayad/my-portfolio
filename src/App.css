@@ -6,3 +6,19 @@
     color: white;
     text-shadow: 0px 0px 10px;
 }
+
+.skillsCarousel{
+    animation:  carouselEffect 30s linear infinite;
+}
+/* .skillsCarousel-container:hover .skillsCarousel{
+    animation-play-state: paused;
+} */
+
+@keyframes carouselEffect{
+    0%{
+        transform: translateX(0%)
+    }
+    100%{
+        transform: translateX(-100%)
+    }
+}

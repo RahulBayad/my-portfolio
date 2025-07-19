@@ -1,17 +1,15 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text3D } from '@react-three/drei';
-import Hero from './sections/hero';
+import Hero from './sections/Hero';
+import Skills from './sections/Skills';
+import Experience from './sections/Experience';
 
 function Main() {
     return (
-        <main >
-
-            <div className="px-6 py-4 grid grid-cols-[auto_auto]  justify-center">
-
-                <Hero/>
-
-            </div>
-            
+        <main>
+            <Hero/>
+            <Skills/>
+            <Experience/>
         </main>
     )
 }
