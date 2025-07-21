@@ -1,14 +1,21 @@
+import React from 'react'
 
-function Header(){
+function Header() {
     return (
-        <header className="header w-full fixed top-0 right-0 backdrop-blur-sm flex justify-end items-center px-8 h-14 z-10">
-            <div className="flex gap-3 md:gap-10 text-base">
-                <a href="#" className="">About</a>
-                <a href="#">Skills</a>
-                <a href="#">Experience</a>
-                <a href="#">Projects</a>
+        <div className="navbar bg-base-100 fixed top-0 left-0 right-0 z-50 shadow-md">
+            <div className="flex-1">
+                <a href="#introduction" className="btn btn-ghost normal-case text-xl">My Portfolio</a>
             </div>
-        </header>
+            <div className="flex-none">
+                <ul className="menu menu-horizontal px-1">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     )
 }
 
