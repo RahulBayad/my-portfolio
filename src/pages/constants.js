@@ -8,4 +8,5 @@ export const skills = [
   { name: "Express.js", imgUrl: "/skills/express.png"},
   { name: "MongoDB", imgUrl: "/skills/mongodb.png" },
   { name: "MySQL", imgUrl: "/skills/mysql.png" },
+  { name: "Postman", imgUrl: "/skills/postman.png" },
 ];
