@@ -1,21 +1,34 @@
 import React from 'react'
+import Button from '../components/ui/Button';
+import { headerNavigations } from './constants';
 
 function Header() {
     return (
-        <div className="navbar bg-base-100 fixed top-0 left-0 right-0 z-50 shadow-md">
-            <div className="flex-1">
-                <a href="#introduction" className="btn btn-ghost normal-case text-xl">My Portfolio</a>
+        <header
+            className="header text-foreground z-20 w-full  flex items-center 
+            px-6 py-4  backdrop-blur-sm 
+            justify-between  fixed "
+        >
+            <div className="">
+                <a href="#introduction" className="font-medium text-2xl">Rahul Bayad</a>
             </div>
-            <div className="flex-none">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <nav className="flex-none">
+                <ul className="flex gap-x-10 px-1">
+                    {
+                        headerNavigations.map(nav => (
+                            <li>
+                                <a href={nav.link} className='hover:border-b-2 hover:border-primary'>{nav.title}</a>
+                            </li>
+                        ))
+                    }
+                    
                 </ul>
+            </nav>
+            <div>
+                {/* <a href="#contact">Contact</a> */}
+                <Button className="font-normal" variant="filled">Contact</Button>
             </div>
-        </div>
+        </header>
     )
 }
 

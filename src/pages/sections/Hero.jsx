@@ -13,8 +13,11 @@ import { useControls } from "leva";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MoveRight } from "lucide-react";
+import Button from "../../components/ui/Button";
+import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 function AnimateMesh() {
   const gltf = useGLTF("/my_room.glb");
@@ -28,9 +31,11 @@ function AnimateMesh() {
 const Hero = () => {
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const lines = gsap.utils.toArray(".intro-animate");
-    gsap.fromTo(
+    const tl = gsap.timeline()
+
+    tl.fromTo(
       lines,
       { y: 100, opacity: 0 },
       {
@@ -47,58 +52,70 @@ const Hero = () => {
         },
       }
     );
+
+    let index = 0
+    const words = ['Design', 'Concept', 'Ideas']
+    const typeWord = () => {
+      gsap.to('#type-animate', {
+        duration: 1.5,
+        text: words[index],
+        ease: "none",
+        yoyo: 1,
+        onComplete: () => {
+          gsap.to('#type-animate', {
+          duration: 1.5,
+          text: "", 
+          ease: "none",
+          onComplete: () => {
+            index = (index + 1) % words.length;
+            typeWord();
+          }
+        });
+        },
+      });
+    };
+    typeWord();
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  });
 
   // const controls = useControls({
   //   spotlightPos : [0.9, 1.5, 0.6]
   // })
-  useGSAP(() => {
-    const tl = gsap.timeline();
-    gsap.utils.toArray(".text-blur").forEach((el, i) => {
-      tl.from(el, {
-        y: 50,
-        duration: 1,
-        stagger: 1,
-      });
-    });
-  });
+
 
   return (
     <section
       id="introduction"
-      className="relative grid grid-cols-1 md:grid-cols-2 px-6 py-24 min-h-screen items-center bg-base-200"
+      className="relative grid grid-cols-1  px-6 py-24 min-h-screen items-center bg-base-200"
     >
-      <div className="z-10 mt-4 gap-4 flex flex-col justify-center">
-        <div className="h-full font-medium">
-          <div className="uppercase" ref={textRef}>
-            <div className="overflow-hidden">
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 text-primary intro-animate">
-                Hi, I'm Rahul Bayad
-              </h1>
-            </div>
-            <div className="overflow-hidden">
-              <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-secondary intro-animate">
-                Software Developer
-              </h2>
-            </div>
-            <div className="overflow-hidden">
-              <p className="mb-6 text-lg text-base-content intro-animate">
-                I love building beautiful, performant web apps that deliver real
-                value. Welcome to my portfolio!
-              </p>
-            </div>
-            <div className="overflow-hidden">
-              <a
-                href="#contact"
-                className="btn btn-primary btn-wide intro-animate"
-              >
-                Contact Me
-              </a>
-            </div>
+      <div className="z-10 mt-4 gap-4 flex ">
+        <div className="h-full  uppercase font-medium">
+          <div className="overflow-hidden">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4  intro-animate">
+              Shaping&nbsp;
+              <span id="type-animate" className="inline-block text-primary"> </span>
+            </h1>
           </div>
+          <div className="overflow-hidden">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4  intro-animate">
+              into Real Projects
+            </h1>
+          </div>
+          <div className="overflow-hidden">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4  intro-animate">
+              that deliver results
+            </h1>
+          </div>
+            <Button className="gap-1" variant="primary">
+              <span>Contact Me</span>
+              <span className=" flex-center rounded-full">
+                <MoveRight size={15} />
+              </span>
+            </Button>
+
         </div>
       </div>
       <figure className="hidden md:block">
