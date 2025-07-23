@@ -6,14 +6,17 @@ const Button = ({ children, className, ...props }) => {
     return (
         <button
             className={`
-                relative overflow-hidden flex gap-2 items-center justify-between 
-                px-4 py-1.5 rounded-full bg-primary-bg cursor-pointer transition-all duration-200 
-                shadow-gray-100  hover:shadow-[0_0_15px_2px]
-                ${props?.variant === "filled" ? "bg-accent-background text-accent-foreground "
+                relative overflow-hidden flex gap-1.5 items-center justify-between 
+                px-4 py-1 rounded-full bg-primary-bg cursor-pointer transition-all duration-200 
+                shadow-gray-100  hover:shadow-[0_0_15px_2px] border hover:border-accent-border
+                ${
+                    props?.variant === "filled" ? "bg-accent-background text-muted "
                     :
                     props?.variant === "primary" ?
-                        "border border-primary bg-primary-background hover:border-accent-background hover:bg-accent-background hover:text-accent-foreground"
-                        : "hover:bg-accent-background hover:text-accent-foreground"
+
+                    "border border-primary bg-primary-background  hover:bg-accent-background hover:text-muted"
+                    
+                    : "hover:bg-accent-background hover:text-muted"
                 }
                 ${className}`}
             {...props}

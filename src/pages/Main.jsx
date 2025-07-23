@@ -5,15 +5,17 @@ import Skills from './sections/Skills';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import About from './sections/About';
 
 function Main() {
     return (
-        <main>
+        <main className='px-6'>
             <Hero/>
+            <About/>
             <Skills/>
-            <Experience/>
-            <Projects/>
-            <Contact/>
+            {/* <Experience/> */}
+            {/* <Projects/> */}
+            {/* <Contact/> */}
         </main>
     )
 }

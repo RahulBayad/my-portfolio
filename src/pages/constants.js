@@ -1,5 +1,7 @@
+export const myEmail = "rahulbayad05@gmail.com"
 export const headerNavigations = [
-  {title: "Introduction", link: "#"},
+  {title: "Home", link: "#"},
+  {title: "About", link: "#"},
   {title: "Skills", link: "#"},
   {title: "Experience", link: "#"},
   {title: "Projects", link: "#"},

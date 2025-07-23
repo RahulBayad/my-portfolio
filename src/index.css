@@ -5,18 +5,23 @@
   --color-primary: #ff0000;
   --color-primary-light: #ff5454;           /* red */
   --color-primary-dark: #8c0000;           /* red */
-  --color-primary-background: #1e0000;/* rgb(30, 0, 0) */
+  --color-primary-background: #5c0000;/* rgb(30, 0, 0) */
   --color-secondary: #ffffff;         /* white */
   --color-success: #008000;           /* green */
   --color-danger: #ff0000;            /* red */
   --color-warning: #ffa500;           /* orange */
+  --color-muted: #1e2939;
 
   --color-foreground: #ffffff;        /* white */
   --color-accent: #000000;            /* black */
   --color-accent-foreground: #000000;            /* black */
   --color-accent-background: #ffffff; /* white */
+  --color-accent-border: #ffffff; /* white */
 
   --color-primary-border: #ff0000;    /* red */
+
+  --animate-blink: blink 500ms infinite;
+  --text-shadow-text-md : 0 0 10px 10px;
 }
 
 
@@ -38,4 +43,9 @@
   .flex-center{
     @apply flex items-center justify-center;
   }
+}
+
+@keyframes blink{
+  from { opacity: 0 }
+  to { opacity: 1 }
 }
