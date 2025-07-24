@@ -1,28 +1,78 @@
-export const myEmail = "rahulbayad05@gmail.com"
+export const myEmail = "rahulbayad05@gmail.com";
 export const headerNavigations = [
-  {title: "Home", link: "#"},
-  {title: "About", link: "#"},
-  {title: "Skills", link: "#"},
-  {title: "Experience", link: "#"},
-  {title: "Projects", link: "#"},
-]
+  { title: "Home", link: "#" },
+  { title: "About", link: "#" },
+  { title: "Skills", link: "#" },
+  { title: "Experience", link: "#" },
+  { title: "Projects", link: "#" },
+];
 
 export const skills = [
   { name: "HTML", imgUrl: "/skills/html.png" },
   { name: "CSS", imgUrl: "/skills/css.png" },
   { name: "JavaScript", imgUrl: "/skills/js.png" },
+  { name: "TypeScript", imgUrl: "/skills/ts.png" },
   { name: "React.js", imgUrl: "/skills/react.png" },
   { name: "Redux.js", imgUrl: "/skills/redux.png" },
+  { name: "Tailwind", imgUrl: "/skills/tailwind.png" },
+  { name: "Shadcn", imgUrl: "/skills/shadcn.png" },
+  { name: "Chakra UI", imgUrl: "/skills/chakra.png" },
   { name: "Node.js", imgUrl: "/skills/node.png" },
-  { name: "Express.js", imgUrl: "/skills/express.png"},
+  { name: "Express.js", imgUrl: "/skills/express.png", className: "invert-100" },
   { name: "MongoDB", imgUrl: "/skills/mongodb.png" },
   { name: "MySQL", imgUrl: "/skills/mysql.png" },
+  { name: "Git", imgUrl: "/skills/git.png" },
+  { name: "Github", imgUrl: "/skills/github.png", className: "invert-100" },
   { name: "Postman", imgUrl: "/skills/postman.png" },
 ];
+export const classifiedSkills = {
+  languages: [
+    { name: "HTML", imgUrl: "/skills/html.png" },
+    { name: "CSS", imgUrl: "/skills/css.png" },
+    { name: "JavaScript", imgUrl: "/skills/js.png" },
+    { name: "TypeScript", imgUrl: "/skills/ts.png" },
+  ],
+  frameworkAndLibraries: [
+    { name: "React.js", imgUrl: "/skills/react.png" },
+    { name: "Redux.js", imgUrl: "/skills/redux.png" },
+    { name: "Tailwind", imgUrl: "/skills/tailwind.png" },
+    { name: "Shadcn", imgUrl: "/skills/shadcn.png" },
+    { name: "Chakra UI", imgUrl: "/skills/chakra.png" },
+    { name: "Node.js", imgUrl: "/skills/node.png", className: "invert-20" },
+    { name: "Express.js", imgUrl: "/skills/express.png", className: "invert-100" },
+  ],
+  dbAndTools: [
+    { name: "MongoDB", imgUrl: "/skills/mongodb.png" },
+    { name: "MySQL", imgUrl: "/skills/mysql.png" },
+    { name: "Git", imgUrl: "/skills/git.png" },
+    { name: "Github", imgUrl: "/skills/github.png", className: "invert-100" },
+    { name: "Postman", imgUrl: "/skills/postman.png" },
+  ],
+};
 
 export const experience = [
-  { title: "Node.js Internship", company: "Tech Nishal", duration: "July 2023 - August 2023", description : "" },
-  { title: "MERN Stack Internship", company: "Arth Infosoft Pvt. Ltd.", duration: "Jan 2024 - Apr 2024", description : "" },
-  { title: "Web Research", company: "Diya Infotech", duration: "Nov 2024 - Mar 2025", description : "" },
-  { title: "Frontend Developer", company: "Aazovo India", duration: "Mar 2025 - Currently Working", description : "" },
-]
+  {
+    title: "Node.js Internship",
+    company: "Tech Nishal",
+    duration: "July 2023 - August 2023",
+    description: "",
+  },
+  {
+    title: "MERN Stack Internship",
+    company: "Arth Infosoft Pvt. Ltd.",
+    duration: "Jan 2024 - Apr 2024",
+    description: "",
+  },
+  {
+    title: "Web Research",
+    company: "Diya Infotech",
+    duration: "Nov 2024 - Mar 2025",
+    description: "",
+  },
+  {
+    title: "Frontend Developer",
+    company: "Aazovo India",
+    duration: "Mar 2025 - Currently Working",
+    description: "",
+  },
+];

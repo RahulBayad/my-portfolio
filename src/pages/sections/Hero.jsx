@@ -104,7 +104,7 @@ const Hero = () => {
               </Button>
             </a>
             <div>
-              <Button variant="" className="gap-1 py-1.5" onClick={handleCopyEmail}>
+              <Button variant="" className="gap-1 py-1.5 bg-zinc-800" onClick={handleCopyEmail}>
                 {
                   copied
                     ?

@@ -1,46 +1,73 @@
-import React, { useRef } from 'react'
-import { skills } from '../constants'
+import { classifiedSkills, skills } from '../constants'
+import Card from '../../components/ui/Card';
 
 const Skills = () => {
-    // Duplicate skills for seamless infinite scroll
-    const skillList = [...skills, ...skills];
-    const carouselRef = useRef(null);
 
     return (
-        <section id="skills" className='mt-20 py-16 bg-base-100'>
-            <div className='text-center mb-8'>
-                <span className='text-center text-4xl font-bold text-primary border-b-2 pb-2'>Skills</span>
+        <section id="skills" className='bg-base-100 pt-20 h-screen w-full'>
+            <div className=' mb-8'>
+                <span 
+                    className='text-center text-3xl text-shadow-text-md font-bold shadow-heading border-b-3 border-primary'
+                        >Skills</span>
             </div>
-            <div className="overflow-hidden w-full">
-                <div
-                    className="flex gap-8 animate-scroll-skill-carousel hover:[animation-play-state:paused]"
-                    ref={carouselRef}
-                    style={{ willChange: 'transform' }}
-                >
-                    {skillList.map((skill, idx) => (
-                        <div
-                            key={skill.name + idx}
-                            className="card w-36 h-40 bg-transparent shadow-none flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105"
-                        >
-                            <div className="flex items-center justify-center w-24 h-24 bg-transparent">
-                                <img src={skill.imgUrl} alt={skill.name} className="w-20 h-20 object-contain" />
-                            </div>
-                            <div className="card-body p-2 items-center bg-transparent">
-                                <h2 className="card-title text-center text-base text-primary-content font-semibold bg-transparent">{skill.name}</h2>
-                            </div>
-                        </div>
-                    ))}
+            <div className="overflow-hidden ">
+
+                <div className='flex overflow-hidden'>
+                    <em className='text-2xl'>Tech Stack At a Glance</em>
                 </div>
+
+                <ul className=' flex flex-col gap-y-8 mt-6'>
+                    <li>
+                        <span className='text-lg font-semibold'>Frontend</span>
+                        <div className="mt-1 flex gap-3 pr-3 flex-wrap">
+                            {classifiedSkills.languages.map((skill, idx) => (
+                                <Card
+                                    key={skill.name + idx}
+                                    className="border px-2 h-9 flex shrink-0 items-center gap-2 border-zinc-600
+                                    bg-zinc-800 inset-shadow-zinc-300 text-sm"
+                                >
+                                    <img src={skill.imgUrl} alt={skill.name} className={`h-5 ${skill.className}`} />
+                                    <span>{skill.name}</span>
+                                </Card>
+                            ))}
+                        </div>
+                    </li>
+                    <li>
+                        <span className='text-lg font-semibold'>Framework & Libraries</span>
+                        <div className="mt-1 flex gap-3 pr-3 flex-wrap">
+                            {classifiedSkills.frameworkAndLibraries.map((skill, idx) => (
+                                <Card
+                                    key={skill.name + idx}
+                                    className="border px-2 h-9 flex shrink-0 items-center gap-2 border-zinc-600
+                                    bg-zinc-800 inset-shadow-zinc-300 text-sm"
+                                >
+                                    <img src={skill.imgUrl} alt={skill.name} className={`h-5 ${skill.className}`} />
+                                    <span>{skill.name}</span>
+                                </Card>
+                            ))}
+                        </div>
+                    </li>
+                    <li>
+                        <span className='text-lg font-semibold'>Database and Tools</span>
+                        <div className="mt-1 flex gap-3 pr-3 flex-wrap">
+                            {classifiedSkills.dbAndTools.map((skill, idx) => (
+                                <Card
+                                    key={skill.name + idx}
+                                    className="border px-2 h-9 flex shrink-0 items-center gap-2 border-zinc-600
+                                    bg-zinc-800 inset-shadow-zinc-300 text-sm"
+                                >
+                                    <img src={skill.imgUrl} alt={skill.name} className={`h-5 ${skill.className}`} />
+                                    <span>{skill.name}</span>
+                                </Card>
+                            ))}
+                        </div>
+                    </li>
+                    
+                </ul>
+
+
+
             </div>
-            <style>{`
-                @keyframes scroll-skill-carousel {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); }
-                }
-                .animate-scroll-skill-carousel {
-                    animation: scroll-skill-carousel 18s linear infinite;
-                }
-            `}</style>
         </section>
     )
 }

@@ -29,9 +29,6 @@ section {
 .skillsCarousel{
     animation:  carouselEffect 30s linear infinite;
 }
-/* .skillsCarousel-container:hover .skillsCarousel{
-    animation-play-state: paused;
-} */
 
 @keyframes carouselEffect{
     0%{

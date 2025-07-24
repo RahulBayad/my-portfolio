@@ -25,12 +25,10 @@ function App() {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        {/* <Header /> */}
-        <div id="smooth-wrapper">
+        <Header />
           <div id="smooth-content" className="z-1">
             <Main />
           </div>
-        </div>
         <div className="-z-20 fixed top-0 h-screen w-screen">
           {/* <img src="/grid.png" alt="..." className='h-full w-full'/> */}
           <Canvas

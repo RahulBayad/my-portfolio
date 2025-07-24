@@ -33,10 +33,10 @@ const About = () => {
             id="about"
             className="relative flex-center box-border min-h-screen"
         >
-            <div className="max-w-[1300px]  flex flex-wrap-reverse gap-10 justify-center">
-                <div className="w-full sm:w-xl">
-                    <h1 className="text-xl text-gray-200 mb-2 overflow-hidden">
-                        <span className="text-clip-animation inline-block">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 justify-center">
+                <div className="">
+                    <h1 className="text-2xl font-bold text-gray-200 mb-2 overflow-hidden">
+                        <span className="text-clip-animation shadow-heading border-b-3 border-primary inline-block">
                             About Me
                         </span>
                     </h1>
