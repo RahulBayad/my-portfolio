@@ -43,8 +43,6 @@
   .flex-center{
     @apply flex items-center justify-center;
   }
-
-
   .shadow-heading{
     text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.4)
   }

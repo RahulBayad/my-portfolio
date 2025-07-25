@@ -13,7 +13,7 @@ function Main() {
     useEffect(() => {
         // Initialize Lenis
         const lenis = new Lenis({
-            duration: 3,
+            duration: 2,
         });
 
         // Use requestAnimationFrame to continuously update the scroll
@@ -26,12 +26,12 @@ function Main() {
 
 
     return (
-        <main className="max-w-[1300px] px-20 m-auto">
+        <main className="max-w-[1300px] px-20 m-auto font-light">
             <Hero />
             <About />
             <Skills />
-            {/* <Experience/> */}
-            {/* <Projects/> */}
+            <Experience/>
+            <Projects/>
             {/* <Contact/> */}
         </main>
     );

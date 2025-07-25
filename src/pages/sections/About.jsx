@@ -13,7 +13,7 @@ const About = () => {
             scrollTrigger: {
                 // scrub: true,
                 trigger: "#about",
-                start: "top 50%",
+                start: "top 80%",
             }
         });
         gsap.from("#about p", {
@@ -21,9 +21,8 @@ const About = () => {
             delay: 1,
             duration: 2,
             scrollTrigger: {
-                // scrub: true,
                 trigger: "#about",
-                start: "top 50%",
+                start: "top 80%",
             }
         })
     });

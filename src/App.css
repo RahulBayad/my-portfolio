@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Shadows+Into+Light&family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Outfit:wght@100..900&family=Shadows+Into+Light&family=Whisper&display=swap');
 body{
   background-color: #0e0e0e;
   color: white;
-  /* background: url('/public/red-grid-bg.jpg'); */
   background-size: contain;
-  /* font-family: "Shadows Into Light"; */
+  font-family: "Outfit", sans-serif;
 }
 
 ::-webkit-scrollbar{

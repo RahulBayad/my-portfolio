@@ -18,7 +18,11 @@ export const skills = [
   { name: "Shadcn", imgUrl: "/skills/shadcn.png" },
   { name: "Chakra UI", imgUrl: "/skills/chakra.png" },
   { name: "Node.js", imgUrl: "/skills/node.png" },
-  { name: "Express.js", imgUrl: "/skills/express.png", className: "invert-100" },
+  {
+    name: "Express.js",
+    imgUrl: "/skills/express.png",
+    className: "invert-100",
+  },
   { name: "MongoDB", imgUrl: "/skills/mongodb.png" },
   { name: "MySQL", imgUrl: "/skills/mysql.png" },
   { name: "Git", imgUrl: "/skills/git.png" },
@@ -39,7 +43,11 @@ export const classifiedSkills = {
     { name: "Shadcn", imgUrl: "/skills/shadcn.png" },
     { name: "Chakra UI", imgUrl: "/skills/chakra.png" },
     { name: "Node.js", imgUrl: "/skills/node.png", className: "invert-20" },
-    { name: "Express.js", imgUrl: "/skills/express.png", className: "invert-100" },
+    {
+      name: "Express.js",
+      imgUrl: "/skills/express.png",
+      className: "invert-100",
+    },
   ],
   dbAndTools: [
     { name: "MongoDB", imgUrl: "/skills/mongodb.png" },
@@ -50,29 +58,4 @@ export const classifiedSkills = {
   ],
 };
 
-export const experience = [
-  {
-    title: "Node.js Internship",
-    company: "Tech Nishal",
-    duration: "July 2023 - August 2023",
-    description: "",
-  },
-  {
-    title: "MERN Stack Internship",
-    company: "Arth Infosoft Pvt. Ltd.",
-    duration: "Jan 2024 - Apr 2024",
-    description: "",
-  },
-  {
-    title: "Web Research",
-    company: "Diya Infotech",
-    duration: "Nov 2024 - Mar 2025",
-    description: "",
-  },
-  {
-    title: "Frontend Developer",
-    company: "Aazovo India",
-    duration: "Mar 2025 - Currently Working",
-    description: "",
-  },
-];
+
