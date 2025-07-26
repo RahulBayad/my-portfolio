@@ -3,11 +3,11 @@ import { OrbitControls, Text3D } from "@react-three/drei";
 import Hero from "./sections/Hero";
 import Skills from "./sections/Skills";
 import Experience from "./sections/Experience";
-import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import About from "./sections/About";
 import Lenis from "lenis";
 import { useEffect } from "react";
+import Projects from "./sections/projects/Projects";
 
 function Main() {
     useEffect(() => {

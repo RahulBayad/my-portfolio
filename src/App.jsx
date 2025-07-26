@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <Header />
+        {/* <Header /> */}
           <div id="smooth-content" className="z-1">
             <Main />
           </div>

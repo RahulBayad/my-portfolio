@@ -7,7 +7,7 @@ body{
 }
 
 ::-webkit-scrollbar{
-  display: none;
+  /* display: none; */
 }
 
 html {
@@ -27,6 +27,10 @@ section {
 
 .skillsCarousel{
     animation:  carouselEffect 30s linear infinite;
+}
+
+.project-card:hover .view{
+  opacity: 1
 }
 
 @keyframes carouselEffect{
