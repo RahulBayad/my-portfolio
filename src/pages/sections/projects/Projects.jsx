@@ -2,6 +2,9 @@ import React, { createContext, useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import Dialog from "../../../components/ui/Dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
 
 const projectsArr = [
   {
@@ -46,31 +49,44 @@ const projectsArr = [
 ];
 
 const Projects = () => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [projectDescription, setProjectDescription] = useState(
+    projectsArr[0].description
+  );
 
-  const handleNext = () => {
-    if (!activeProject) return;
-    setCurrentIndex((prev) =>
-      prev === activeProject.carouselImages.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const handlePrev = () => {
-    if (!activeProject) return;
-    setCurrentIndex((prev) =>
-      prev === 0 ? activeProject.carouselImages.length - 1 : prev - 1
-    );
-  };
-
-  // Optional: Reset current index when project changes
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [activeProject]);
-
-  const openDialog = () => setIsDialogOpen(true);
-  const closeDialog = () => setIsDialogOpen(false);
+  useGSAP(() => {
+    
+    gsap.from(".project-1", {
+      scale: 0.5,
+      duration: 200,
+      scrollTrigger: {
+        trigger: ".project-1",
+        top: "20%",
+        scrub: true,
+        onEnter: () => {
+          
+          setProjectDescription(projectsArr[0].description);
+        },
+        onEnterBack: () => {
+          setProjectDescription(projectsArr[0].description);
+        },
+      },
+    });
+    gsap.from(".project-2", {
+      scale: 0.5,
+      duration: 200,
+      scrollTrigger: {
+        trigger: ".project-2",
+        top: "20%",
+        scrub: true,
+        onEnter: () => {
+          setProjectDescription(projectsArr[0].description);
+        },
+        onEnterBack: () => {
+          setProjectDescription(projectsArr[0].description);
+        },
+      },
+    });
+  });
 
   return (
     <div>
@@ -80,79 +96,36 @@ const Projects = () => {
             Projects
           </span>
         </div>
-        <div className="flex gap-3">
-          {projectsArr.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              techStack={project.techStack}
-              bannerImage={project.bannerImage}
-              onClick={() => {
-                setActiveProject(project);
-                openDialog();
-              }}
-            />
-          ))}
-          <Dialog
-            isOpen={isDialogOpen}
-            handleClose={closeDialog}
-            title={activeProject?.title}
-            className=""
-          >
-            <div>
-              <figure className="flex overflow-hidden">
-                {activeProject?.carouselImages?.length > 0 && (
-                  <div className="relative w-full">
-                    <div
-                      className="flex transition-transform duration-500 ease-in-out"
-                      style={{
-                        transform: `translateX(-${currentIndex * 100}%)`,
-                      }}
-                    >
-                      {activeProject.carouselImages.map((url, index) => (
-                        <img
-                          key={index}
-                          src={url}
-                          alt={`Slide ${index + 1}`}
-                          className="min-w-full h-74 object-contain rounded-sm"
-                        />
-                      ))}
-                    </div>
-
-                    {/* Arrows */}
-                    <button
-                      onClick={handlePrev}
-                      className="absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 p-1 rounded-full text-white"
-                    >
-                      <ChevronLeft />
-                    </button>
-                    <button
-                      onClick={handleNext}
-                      className="absolute top-1/2 right-2 -translate-y-1/2 bg-black/40 p-1 rounded-full text-white"
-                    >
-                      <ChevronRight />
-                    </button>
-
-                    {/* Dots */}
-                    <div className="flex justify-center gap-1 mt-2">
-                      {activeProject.carouselImages.map((_, index) => (
-                        <button
-                          key={index}
-                          className={`w-2 h-2 rounded-full ${
-                            index === currentIndex
-                              ? "bg-zinc-200"
-                              : "bg-zinc-600"
-                          }`}
-                          onClick={() => setCurrentIndex(index)}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </figure>
+        <div className="flex gap-3  relative">
+          <div className="flex flex-col gap-10 border-red-500">
+            <div className="project-1 w-[50vw] border border-zinc-600 rounded-md p-3 aspect-[4/3] bg-zinc-400/10 backdrop-blur-sm">
+              <div className="p-5 px-8 h-full bg-pink-950 rounded-sm overflow-hidden flex flex-col justify-between">
+                <span className="text-xl text-pink-200">Landing Page</span>
+                <figure className="flex-center">
+                  <img
+                    src="/projects/apexchat/image.png"
+                    className="w-[90%] rounded-lg relative -bottom-10 
+                      shadow-[0_-10px_30px_10px] shadow-pink-800 transition-all  duration-200
+                      hover:scale-110 hover:-rotate-2"
+                  />
+                </figure>
+              </div>
             </div>
-          </Dialog>
+            <div className="project-2 w-[50vw] border border-zinc-600 rounded-md p-3 aspect-[4/3] bg-zinc-400/10 backdrop-blur-sm">
+              <div className="p-5 px-8 h-full bg-pink-950 rounded-sm overflow-hidden flex flex-col justify-between">
+                <span className="text-xl text-pink-200">Landing Page</span>
+                <img
+                  src="/projects/apexchat/image.png"
+                  className="w-full rounded-lg relative -bottom-10 
+                    shadow-[0_-10px_30px_10px] shadow-pink-800 transition-all  duration-200
+                    hover:scale-105 hover:-rotate-2"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="w-fulll  sticky top-20 h-52">
+            {projectDescription}
+          </div>
         </div>
       </section>
     </div>

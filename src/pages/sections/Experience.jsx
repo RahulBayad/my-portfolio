@@ -33,9 +33,9 @@ const experience = [
           <li>Built and managed RESTful APIs with full CRUD functionality.</li>
           <li>Focused on clean architecture and modular code structure.</li>
         </ul>
-        <div>
+        {/* <div>
           <Tag>Node.js</Tag>
-        </div>
+        </div> */}
       </div>
     ),
   },

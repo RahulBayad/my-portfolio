@@ -18,13 +18,15 @@ const Skills = () => {
                 start: "top 50%",
             }
         });
-        gsap.from("#skills .skill-card, #skills .subheading", {
-            opacity: 0,
-            duration: 1,
+        gsap.from("#skills .skill-card", {
+            duration: 0.25,
             stagger: 0.1,
+            scale: 0,
+            ease: "bounce.inOut",
             scrollTrigger: {
                 trigger: "#skills",
                 start: "top 50%",
+                
             }
         })
     });

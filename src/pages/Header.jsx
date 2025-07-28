@@ -7,7 +7,7 @@ function Header() {
         <header
             className="header text-foreground z-20 w-full  flex items-center 
             px-6 py-1 pt-2 backdrop-blur-sm 
-            justify-between top-0 "
+            justify-between top-0 absolute"
         >
             <div className="">
                 <button

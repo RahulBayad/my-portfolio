@@ -18,8 +18,8 @@ const Dialog = ({
       style={{ transform: isOpen ? "scale(1)" : "scale(0)" }}
     >
       <div
-        className={`border border-zinc-600 bg-zinc-900 w-2xl max-w-[900px] rounded-lg p-4 px-6 max-h-[90vh] 
-          overflow-x-hidden overflow-y-auto 
+        className={`border border-zinc-600 bg-zinc-900 max-w-[900px] w-[85vh] md:w-[70vw] max-h-[90vh] 
+          rounded-lg p-4 px-6 overflow-x-hidden overflow-y-auto 
           ${className}`
         }
        
