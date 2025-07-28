@@ -19,7 +19,7 @@ const projectsArr = [
       "Rest APIs",
       "Cloudinary",
     ],
-    bannerImage: "/public/gallery.png",
+    bannerImage: "/gallery.png",
     carouselImages: [
       "/projects/apexchat/img1.png",
       "/projects/apexchat/img2.png",

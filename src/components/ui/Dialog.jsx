@@ -13,14 +13,16 @@ const Dialog = ({
   return (
     <div
       className={`
-            flex-center z-10 h-screen w-screen fixed top-0 left-0 backdrop-blur-xs transition-all overflow-hidden
-            
+            flex-center z-10 h-screen w-screen fixed top-0 left-0 backdrop-blur-xs overflow-hidden 
         `}
-      style={{ display: isOpen ? "flex" : "none" }}
+      style={{ transform: isOpen ? "scale(1)" : "scale(0)" }}
     >
       <div
         className={`border border-zinc-600 bg-zinc-900 w-2xl max-w-[900px] rounded-lg p-4 px-6 max-h-[90vh] 
-            overflow-x-hidden overflow-y-auto ${className}`}
+          overflow-x-hidden overflow-y-auto 
+          ${className}`
+        }
+       
       >
         {/* Header  */}
         <div className="flex justify-end mb-1">
