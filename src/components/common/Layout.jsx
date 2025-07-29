@@ -9,7 +9,7 @@ const Layout = () => {
     <div>
       <Suspense fallback={<Loading />}>
         <Header />
-        <div id="smooth-content" className="z-1">
+        <div className="z-1">
           <Main />
         </div>
         <div className="-z-20 fixed top-0 h-screen w-screen">

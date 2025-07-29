@@ -11,7 +11,6 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { Canvas } from "@react-three/fiber";
 import Layout from "./components/common/Layout";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
   // useEffect(() => {
