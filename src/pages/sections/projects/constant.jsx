@@ -287,5 +287,4 @@ export const projectsArr = [
       "/projects/apexchat/img5.png",
     ],
   },
-  
 ];
