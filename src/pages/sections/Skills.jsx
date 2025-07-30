@@ -46,7 +46,7 @@ const Skills = () => {
 
                 <ul className=' flex flex-col gap-y-8 mt-6'>
                     <li>
-                        <span className='subheading text-lg font-semibold'>Frontend</span>
+                        <span className='subheading text-lg font-semibold'>Programming Languages</span>
                         <div className="mt-1 flex gap-3 pr-3 flex-wrap">
                             {classifiedSkills.languages.map((skill, idx) => (
                                 <Card
