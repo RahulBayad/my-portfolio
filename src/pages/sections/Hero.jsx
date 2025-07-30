@@ -69,7 +69,7 @@ const Hero = () => {
       <div className="z-10 mt-4 text-center ">
         <div className="h-full  font-medium flex flex-col justify-center">
           <div className="overflow-hidden uppercase">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 flex-center flex-col sm:flex-row flex-wrap gap-3 intro-animate">
+            <h1 className=" text-4xl md:text-5xl lg:text-6xl font-bold mb-4 flex-center flex-row flex-wrap gap-3 intro-animate">
               <span>Shaping</span>
               {/* <span id="typing-animation" className="text-primary"></span> */}
               <TypingWords words={words} />
@@ -77,13 +77,13 @@ const Hero = () => {
           </div>
 
           <div className="overflow-hidden uppercase">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4  intro-animate">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4  intro-animate">
               into Real Projects
             </h1>
           </div>
 
           <div className="overflow-hidden uppercase">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4  intro-animate">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4  intro-animate">
               that deliver results
             </h1>
           </div>
@@ -96,7 +96,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex-center flex-col sm:flex-row mt-2 gap-2">
+          <div className="flex-center flex-col sm:flex-row text-sm lg:text-base mt-2 gap-2">
             <a href="/resume.pdf" download>
               <Button className="gap-1 py-1.5" variant="primary">
                 <Download size={16} />

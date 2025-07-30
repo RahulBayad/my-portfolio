@@ -157,9 +157,9 @@ const Experience = () => {
           Experience
         </span>
       </div>
-      <div className="grid grid-cols-[20px_auto] gap-x-5">
+      <div className="grid sm:grid-cols-[20px_auto] gap-x-3 lg:gap-x-5">
         {/* For Track */}
-        <div className="relative  flex-center">
+        <div className="relative flex-center">
           <div className="track w-1.5 h-[100%] bg-zinc-800 flex justify-center overflow-visible rounded-sm">
             <div
               className="scrolled-track w-1.5 rounded-sm h-0 shadow-[0_0_6px_1px] shadow-blue-600"
@@ -177,12 +177,12 @@ const Experience = () => {
           {experience.map((exp, idx) => (
             <div
               key={exp.title}
-              className={`bg-zinc-900 top-10 border border-zinc-700 p-5 flex flex-col md:flex-row  gap-10
+              className={`bg-zinc-900 top-10 sm:border border-zinc-800 p-3 sm:p-5 flex flex-col md:flex-row  gap-10
                 rounded-lg w-full`}
             >
               <div className="flex flex-col min-w-[250px] text-sm gap-y-1">
                 <span className="uppercase text-xs">{exp.duration}</span>
-                <h2 className="text-2xl mb-1">{exp.company}</h2>
+                <h2 className="text-xl sm:text-2xl mb-1">{exp.company}</h2>
                 <span className="flex gap-1.5 items-center">
                   <MapPin size={14} /> {exp.location}
                 </span>
@@ -191,8 +191,10 @@ const Experience = () => {
                 </span>
               </div>
               <div>
-                <h2 className="text-2xl font-medium mb-2">{exp.title}</h2>
-                {exp.description()}
+                <h2 className="text-xl sm:text-2xl font-medium mb-2">{exp.title}</h2>
+                <div className="text-sm sm:text-base">
+                  {exp.description()}
+                </div>
               </div>
             </div>
           ))}

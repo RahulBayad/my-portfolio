@@ -51,44 +51,58 @@ const Projects = () => {
           Projects
         </span>
       </div>
-      <div className="flex gap-8  relative">
-        <div className="flex flex-col gap-16 border-red-500">
+      <div className="lg:flex gap-8 relative">
+        <div className="grid md:grid-cols-2 gap-x-5 gap-y-16 lg:flex flex-col lg:gap-16">
           {projectsArr?.length > 0 &&
             projectsArr?.map((project, index) => (
-              <div
-                key={project?.title}
-                className={`project-${
-                  index + 1
-                } w-full lg:min-w-xl lg:w-2xl  border border-zinc-600 rounded-2xl p-3 aspect-4/3  bg-zinc-400/10 backdrop-blur-sm`}
-              >
+              <div className="">
                 <div
-                  className={`p-7 px-12 h-full rounded-lg overflow-hidden flex flex-col justify-between ${project?.bgColor}`}
+                  key={project?.title}
+                  className={`project-${index + 1} w-full lg:min-w-xl border border-zinc-600 rounded-2xl 
+                    p-2 sm:p-3 md:h-58 lg:h-auto lg:aspect-4/3 bg-zinc-400/10 backdrop-blur-sm`}
                 >
-                  <span className={`text-2xl `}>{project?.title}</span>
-                  <figure className="flex-center">
-                    <img
-                      src={project?.bannerImage || "/gallery.png"}
-                      className={`w-full rounded-lg relative -bottom-9
-                      shadow-[0_-3px_20px_5px] ${project.shadow} transition-all  duration-200
-                      hover:scale-105 hover:-rotate-2`}
-                    />
-                  </figure>
+                  <div
+                    className={`lg:py-5 px-10 h-full rounded-lg overflow-hidden flex flex-col justify-between ${project?.bgColor}`}
+                  >
+                    <span className={`text-2xl hidden lg:block`}>{project?.title}</span>
+                    <figure className="flex-center">
+                      <img
+                        src={project?.bannerImage || "/gallery.png"}
+                        className={`w-full rounded-lg relative -bottom-9
+                        shadow-[0_-3px_20px_5px] ${project.shadow} transition-all  duration-200
+                        hover:scale-105 hover:-rotate-2`}
+                      />
+                    </figure>
+                  </div>
+                </div>
+                <div className="lg:hidden mt-3">
+                  <h2
+                    className={`text-xl lg:text-2xl text-wrap font-medium mb-2 ${project.border}`}
+                  >
+                    {project?.title}
+                  </h2>
+                  <div className="text-sm">
+                    {project?.description()}
+                  </div>
                 </div>
               </div>
             ))}
         </div>
-        <div className="w-full flex gap-4 sticky lg:top-1/4 h-52">
+        <div className="w-full min-w-sm  hidden lg:flex gap-4 p-4 rounded-lg sticky lg:top-[10%] h-fit">
           <div className="flex-center h-8">
             <div
               className={`border-b-3 ${activeProject.borderColor}  h-1 w-5`}
             ></div>
           </div>
-          <div>
-            <h2 className={`text-2xl font-medium mb-2 ${activeProject.border}`}>
-              {" "}
+          <div className="w-full">
+            <h2
+              className={`text-2xl text-wrap font-medium mb-2 ${activeProject.border}`}
+            >
               {activeProject?.title}
             </h2>
-            {activeProject?.description}
+            <div className="leading-relaxed text-wrap break-words w-full">
+              {activeProject?.description()}
+            </div>
           </div>
         </div>
       </div>

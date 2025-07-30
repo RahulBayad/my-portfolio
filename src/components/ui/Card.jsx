@@ -4,7 +4,7 @@ const Card = ({children, className, ...props}) => {
   return (
     <div 
         className={
-            `rounded-lg ${className}`
+            `text-xs lg:text-base rounded-lg ${className}`
         } 
         {...props}
     >

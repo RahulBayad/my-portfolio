@@ -11,12 +11,10 @@ import Projects from "./sections/projects/Projects";
 
 function Main() {
     useEffect(() => {
-        // Initialize Lenis
         const lenis = new Lenis({
             duration: 2,
         });
 
-        // Use requestAnimationFrame to continuously update the scroll
         function raf(time) {
             lenis.raf(time);
             requestAnimationFrame(raf);
@@ -24,9 +22,13 @@ function Main() {
         requestAnimationFrame(raf);
     }, []);
 
+    useEffect(()=>{
+        alert("This Website is under development. Some features might not work properly.")
+    },[])
+
 
     return (
-        <main className="max-w-[1300px] px-20 m-auto font-light">
+        <main className="max-w-[1300px] px-6 sm:px-8 lg:px-20 m-auto font-light">
             <Hero />
             <About />
             <Skills />
