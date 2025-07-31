@@ -27,4 +27,4 @@ const Button = ({ children, className, ...props }) => {
     )
 }
 
-export default Button
+export default React.memo(Button)

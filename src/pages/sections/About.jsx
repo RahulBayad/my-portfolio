@@ -83,6 +83,24 @@ const About = () => {
           </p>
         </div>
       </div>
+
+      {/* <div className="fixed left-6 top-1/2 -translate-y-1/2 p-2 py-3 flex flex-col gap-4 
+        bg-zinc-900 backdrop-blur-2xl border-2 border-zinc-800 rounded-full">
+        <a
+          href="https://github.com/RahulBayad"
+          target="_blank"
+          className="hover:scale-110 transition"
+        >
+          <img src="/icons/github.svg" className="h-7 w-7 invert-100" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/rahul-bayad-57159522b/"
+          target="_blank"
+          className="hover:scale-110 transition"
+        >
+          <img src="/icons/linkedin.svg" className="h-7 w-7 invert-100 " />
+        </a>
+      </div> */}
     </section>
   );
 };
