@@ -61,7 +61,7 @@ function Header() {
             </button>
             <ul className="flex flex-col gap-2">
               {headerNavigations.map((nav) => (
-                <li key={nav.title} className="flex gap-3">
+                <li key={nav.title} className="flex gap-3" onClick={closeSidebar}>
                     <div className="flex-center">
                         <div className="w-1.5 border-1 border-primary"></div>
                     </div>
