@@ -63,7 +63,7 @@ const Hero = () => {
 
   return (
     <section
-      id="introduction"
+      id="home"
       className="relative grid grid-cols-1 px-6 py-24 min-h-screen items-center bg-base-200"
     >
       <div className="z-10 mt-4 text-center ">

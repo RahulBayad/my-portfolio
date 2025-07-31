@@ -1,10 +1,10 @@
 export const myEmail = "rahulbayad05@gmail.com";
 export const headerNavigations = [
-  { title: "Home", link: "#" },
-  { title: "About", link: "#" },
-  { title: "Skills", link: "#" },
-  { title: "Experience", link: "#" },
-  { title: "Projects", link: "#" },
+  { title: "Home", link: "#home" },
+  { title: "About", link: "#about" },
+  { title: "Skills", link: "#skills" },
+  { title: "Experience", link: "#experience" },
+  { title: "Projects", link: "#projects" },
 ];
 
 export const skills = [
