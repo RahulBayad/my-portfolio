@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import Dialog from "../../../components/ui/Dialog";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
@@ -58,13 +58,17 @@ const Projects = () => {
               <div className="">
                 <div
                   key={project?.title}
-                  className={`project-${index + 1} w-full lg:min-w-xl border border-zinc-600 rounded-2xl 
+                  className={`project-${
+                    index + 1
+                  } w-full lg:min-w-xl border border-zinc-600 rounded-2xl 
                     p-2 sm:p-3 md:h-58 lg:h-auto lg:aspect-4/3 bg-zinc-400/10 backdrop-blur-sm`}
                 >
                   <div
                     className={`lg:py-5 px-10 h-full rounded-lg overflow-hidden flex flex-col justify-between ${project?.bgColor}`}
                   >
-                    <span className={`text-2xl hidden lg:block`}>{project?.title}</span>
+                    <span className={`text-2xl hidden lg:block`}>
+                      {project?.title}
+                    </span>
                     <figure className="flex-center">
                       <img
                         src={project?.bannerImage || "/gallery.png"}
@@ -81,9 +85,7 @@ const Projects = () => {
                   >
                     {project?.title}
                   </h2>
-                  <div className="text-sm">
-                    {project?.description()}
-                  </div>
+                  <div className="text-sm">{project?.description()}</div>
                 </div>
               </div>
             ))}
@@ -95,11 +97,20 @@ const Projects = () => {
             ></div>
           </div>
           <div className="w-full">
-            <h2
-              className={`text-2xl text-wrap font-medium mb-2 ${activeProject.border}`}
-            >
-              {activeProject?.title}
-            </h2>
+            <div className="inline-block">
+              <a
+                href={activeProject?.liveLink || "#"}
+                target={activeProject?.liveLink ? "_blank" : "_self"}
+                className="flex items-center gap-2  mb-2 border-b border-transparent hover:border-zinc-400 cursor-pointer"
+              >
+                <h2
+                  className={`text-2xl text-wrap font-medium ${activeProject.border}`}
+                >
+                  {activeProject?.title}
+                </h2>
+                <ArrowUpRight size={20} className="mt-1" />
+              </a>
+            </div>
             <div className="leading-relaxed text-wrap break-words w-full">
               {activeProject?.description()}
             </div>

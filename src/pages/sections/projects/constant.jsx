@@ -4,6 +4,7 @@ export const projectsArr = [
   {
     techStack: ["React.js", "Tailwind", "GSAP", "R3F"],
     title: "Personal Portfolio",
+    liveLink: "https://rahulbayad.vercel.app",
     description: function () {
       return (
         <div className="">
@@ -63,6 +64,7 @@ export const projectsArr = [
   },
   {
     title: "Urban Service",
+    liveLink: "https://urbanservice.vercel.app",
     techStack: [
       "React.js",
       "Node.js",
@@ -139,6 +141,7 @@ export const projectsArr = [
   {
     title: "Apex Chat Landing Page",
     techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
+    liveLink: "https://apexchat.netlify.app",
     description: function () {
       return (
         <div className="">
