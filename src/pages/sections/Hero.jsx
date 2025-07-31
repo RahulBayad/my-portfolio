@@ -67,7 +67,7 @@ const Hero = () => {
       id="home"
       className="relative grid grid-cols-1 px-6 py-24 min-h-screen items-center bg-base-200"
     >
-      <div className="z-10 mt-4 text-center select-none">
+      <div className="mt-4 text-center select-none">
         <div className="h-full  font-medium flex flex-col justify-center">
           <div className="overflow-hidden uppercase">
             <h1 className=" text-4xl md:text-5xl lg:text-6xl font-bold mb-4 flex-center flex-row flex-wrap gap-3 intro-animate">
