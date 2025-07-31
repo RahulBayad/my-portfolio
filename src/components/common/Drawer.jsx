@@ -20,7 +20,7 @@ const Drawer = ({ label, children, className }) => {
 
   return (
     <>
-      <Button onClick={openDrawer}>{label}</Button>
+      <Button onClick={openDrawer} className="py-1.5">{label}</Button>
       <div
         className={`
             h-screen w-screen bg-black/20 backdrop-blur-sm z-10 fixed top-0 left-0 transition-all duration-1000
