@@ -1,4 +1,8 @@
 export const myEmail = "rahulbayad05@gmail.com";
+export const myGithub = "https://www.github.com/RahulBayad";
+export const myLinkedin = "https://www.linkedin.com/in/rahul-bayad-57159522b@gmail.com";
+
+
 export const headerNavigations = [
   { title: "Home", link: "#home" },
   { title: "About", link: "#about" },
