@@ -47,35 +47,32 @@ function Header() {
         <button className="sm:hidden" onClick={openSidebar}>
           <Menu />
         </button>
-        
       </nav>
       <div
-          className={`fixed left-0 top-0 sm:hidden bg-black/95 backdrop-blur-xl w-screen h-screen 
-                ${isSidebarOpen ? "block" : "hidden"}
-            `}
-            style={{position: 'fixed'}}
-        >
-          <aside className="h-full p-4">
-            <button className="absolute right-3 top-2" onClick={closeSidebar}>
-              <X />
-            </button>
-            <ul className="flex flex-col gap-2">
-              {headerNavigations.map((nav) => (
-                <li key={nav.title} className="flex gap-3" onClick={closeSidebar}>
-                    <div className="flex-center">
-                        <div className="w-1.5 border-1 border-primary"></div>
-                    </div>
-                  <a
-                    href={nav.link}
-                    className=""
-                  >
-                    {nav.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </aside>
-        </div>
+        className={`fixed left-0 top-0 sm:hidden bg-black/95 backdrop-blur-xl w-screen h-screen 
+          transition-all duration-600
+          ${isSidebarOpen ? "translate-x-0" : "translate-x-[100%]"}
+          `}
+        style={{ position: "fixed" }}
+      >
+        <aside className="h-full p-4">
+          <button className="absolute right-3 top-2" onClick={closeSidebar}>
+            <X />
+          </button>
+          <ul className={`flex flex-col gap-2 h-full transition-all ease-out duration-900
+              ${isSidebarOpen ? "translate-y-0" : "-translate-y-[100%]"}
+            `}>
+            {headerNavigations.map((nav) => (
+              <li key={nav.title} className="flex gap-3" onClick={closeSidebar}>
+                <div className="flex-center">
+                  <div className="w-1.5 border-1 border-primary"></div>
+                </div>
+                <a href={nav.link}>{nav.title}</a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
     </header>
   );
 }
