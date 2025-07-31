@@ -39,7 +39,7 @@ const About = () => {
           </span>
         </h1>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-6">
           <span className="text-clip-animation inline-block">
             Full Stack Developer
           </span>
