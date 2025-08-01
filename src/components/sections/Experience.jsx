@@ -71,7 +71,7 @@ const experience = [
     location: "Ahmedabad, Gujarat, India",
     company: "Diya Infotech",
     type: "Office",
-    duration: "Nov 2024 - Mar 2025",
+    duration: "Nov 2024 - Feb 2025",
     description: () => (
       <ul className="list-disc pl-4.5">
         <li>
