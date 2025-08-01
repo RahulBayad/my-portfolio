@@ -1,13 +1,11 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Text3D } from "@react-three/drei";
-import Hero from "./sections/Hero";
-import Skills from "./sections/Skills";
-import Experience from "./sections/Experience";
-import Contact from "./sections/Contact";
-import About from "./sections/About";
+import Hero from "../sections/Hero";
+import Skills from "../sections/Skills";
+import Experience from "../sections/Experience";
+import About from "../sections/About";
 import Lenis from "lenis";
 import { useEffect } from "react";
-import Projects from "./sections/projects/Projects";
+import Projects from "../sections/projects/Projects";
+import Footer from "./Footer";
 
 function Main() {
     useEffect(() => {

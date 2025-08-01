@@ -1,4 +1,4 @@
-import { classifiedSkills, skills } from '../constants'
+import { classifiedSkills, skills } from '../../components/common/constants'
 import Card from '../../components/ui/Card';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';

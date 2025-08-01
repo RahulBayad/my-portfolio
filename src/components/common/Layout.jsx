@@ -1,19 +1,25 @@
 import React, { Suspense } from "react";
-import Loading from "../ui/Loading";
-import Header from "../../pages/Header";
-import Main from "../../pages/Main";
+import Header from "./Header";
 import { Canvas } from "@react-three/fiber";
+import Loading from "../ui/Loading";
+import Main from "./Main";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
     <div>
       <Suspense fallback={<Loading />}>
         <Header />
+
+        {/* Main Section  */}
         <div className="z-1">
           <Main />
         </div>
+
+        <Footer />
+
+        {/* Grid Background */}
         <div className="-z-20 fixed top-0 h-screen w-screen">
-          {/* <img src="/grid.png" alt="..." className='h-full w-full'/> */}
           <Canvas
             camera={{ position: [0, 0, 10], fov: 75 }}
             style={{ height: "100vh", width: "100vw" }}

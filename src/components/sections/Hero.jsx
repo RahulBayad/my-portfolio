@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 import Button from "../../components/ui/Button";
 import TypingWords from "../../components/ui/TypingWords";
-import { myEmail, myGithub, myLinkedin } from "../constants";
+import { myEmail, myGithub, myLinkedin } from "../../components/common/constants";
 import { TextPlugin } from "gsap/TextPlugin";
 import Drawer from "../../components/ui/Drawer";
 import ContactDrawer from "../../components/common/ContactDrawer";

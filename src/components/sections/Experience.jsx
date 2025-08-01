@@ -98,9 +98,9 @@ const experience = [
     location: "Ahmedabad, Gujarat, India",
     company: "Aazovo",
     type: "Office",
-    duration: "Mar 2025 - Present",
+    duration: "Feb 2025 - Present",
     description: () => (
-      <div className="font-">
+      <div className="">
         <p className="pb-2">
           I am currently working as a Frontend Developer, where I develop and
           maintain responsive and user-friendly web pages for the company

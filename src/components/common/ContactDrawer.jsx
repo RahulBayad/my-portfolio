@@ -1,6 +1,6 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import React from "react";
-import { myEmail, myGithub, myLinkedin } from "../../pages/constants";
+import { myEmail, myGithub, myLinkedin } from "./constants";
 
 const ContactDrawer = () => {
   return (

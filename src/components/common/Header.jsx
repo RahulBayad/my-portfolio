@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Button from "../components/ui/Button";
+import Button from "../ui/Button";
 import { headerNavigations } from "./constants";
 import { Menu, X } from "lucide-react";
-import Drawer from "../components/ui/Drawer";
-import ContactDrawer from "../components/common/ContactDrawer";
+import Drawer from "../ui/Drawer";
+import ContactDrawer from "./ContactDrawer";
 
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,7 +19,7 @@ function Header() {
     >
       <div className="">
         <button
-          href="#introduction"
+          href="#home"
           className="block select-none font-semibold flex-center text-5xl font-[Whisper]"
         >
           <span>R</span>
@@ -40,7 +40,11 @@ function Header() {
           ))}
           <li>
             <Drawer
-              label={<Button className="text-sm font-medium" variant="primary">Contact</Button>}
+              label={
+                <Button className="text-sm font-medium" variant="primary">
+                  Contact
+                </Button>
+              }
               btnVariant="primary"
               className="w-[94%] max-w-md lg:w-lg"
             >
@@ -54,6 +58,8 @@ function Header() {
           <Menu />
         </button>
       </nav>
+
+      {/* Mobile Navigation */}
       <div
         className={`fixed left-0 top-0 sm:hidden bg-black/95 backdrop-blur-xl w-screen h-screen 
           transition-all duration-600
@@ -78,6 +84,21 @@ function Header() {
                 <a href={nav.link}>{nav.title}</a>
               </li>
             ))}
+            <li className="flex gap-3" onClick={closeSidebar}>
+              <div className="flex-center">
+                <div className="w-1.5 border-1 border-primary"></div>
+              </div>
+              <Drawer
+                label={
+                  <button className="text-sm font-medium">
+                    Contact
+                  </button>
+                }
+                className="w-[94%] max-w-md lg:w-lg"
+              >
+                <ContactDrawer />
+              </Drawer>
+            </li>
           </ul>
         </aside>
       </div>
