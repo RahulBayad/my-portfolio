@@ -36,7 +36,7 @@ const Drawer = ({ buttonLabel, btnVariant, label, children, className }) => {
           <div
             className={`fixed border border-zinc-700 rounded-xl z-20 left-1/2  -translate-x-1/2 pb-6 px-4 lg:px-6
           transition-all duration-500 bg-zinc-900 
-          ${isDrawerOpen ? "-bottom-3" : "-bottom-full"}
+          ${isDrawerOpen ? "-bottom-3 scale-100" : "-bottom-full scale-75"}
           ${className}
         `}
             role="dialog"
