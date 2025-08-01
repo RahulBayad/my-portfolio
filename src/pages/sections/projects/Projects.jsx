@@ -79,17 +79,33 @@ const Projects = () => {
                     </figure>
                   </div>
                 </div>
+
+                {/* Description for mobile */}
                 <div className="lg:hidden mt-3">
-                  <h2
+                  {/* <h2
                     className={`text-xl lg:text-2xl text-wrap font-medium mb-2 ${project.border}`}
                   >
                     {project?.title}
-                  </h2>
+                  </h2> */}
+                  <a
+                    href={project?.liveLink || "#"}
+                    target={project?.liveLink ? "_blank" : "_self"}
+                    className="flex items-center gap-2  mb-2 border-b border-transparent hover:border-zinc-400 cursor-pointer"
+                  >
+                    <h2
+                      className={`text-xl text-wrap font-medium ${project.border}`}
+                    >
+                      {project?.title}
+                    </h2>
+                    <ArrowUpRight size={20} className="mt-1" />
+                  </a>
                   <div className="text-sm">{project?.description()}</div>
                 </div>
               </div>
             ))}
         </div>
+
+        {/* Description for Desktop/Laptop */}
         <div className="w-full min-w-sm  hidden lg:flex gap-4 p-4 rounded-lg sticky lg:top-[10%] h-fit">
           <div className="flex-center h-8">
             <div
