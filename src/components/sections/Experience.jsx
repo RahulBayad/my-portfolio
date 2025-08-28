@@ -98,7 +98,7 @@ const experience = [
     location: "Ahmedabad, Gujarat, India",
     company: "Aazovo",
     type: "Office",
-    duration: "Feb 2025 - Present",
+    duration: "Feb 2025 - Aug 2025",
     description: () => (
       <div className="">
         <p className="pb-2">
