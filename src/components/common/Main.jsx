@@ -20,11 +20,6 @@ function Main() {
         requestAnimationFrame(raf);
     }, []);
 
-    useEffect(()=>{
-        alert("This Website is under development. Some features might not work properly.")
-    },[])
-
-
     return (
         <main className="max-w-[1300px] px-6 sm:px-8 lg:px-20 m-auto font-light">
             <Hero />
