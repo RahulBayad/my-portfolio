@@ -41,7 +41,11 @@ function Header() {
           <li>
             <Drawer
               label={
-                <Button className="text-sm font-medium" variant="primary">
+                <Button className="text-sm font-medium" variant="primary"
+                  onClick={()=>{
+                    fbq('track', 'Contact');
+                  }}
+                >
                   Contact
                 </Button>
               }
